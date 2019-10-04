@@ -87,7 +87,7 @@ public class Lista<T> {
  
     public void addFirst(Nodo<T> nodo){
         if (this.head==null){
-            this.head= new Nodo();
+            this.head= new Nodo<>();
 
         }
         else{
@@ -101,13 +101,14 @@ public class Lista<T> {
      * Metodo para agregar un dato al inicio de la lista
      * @param dato 
      */
+
     public void addFirst(T dato){
         if (this.head==null){
-            this.head= new Nodo(dato);           
+            this.head= new Nodo<>(dato);           
         }
         else{
             Nodo<T> temp= this.head;
-            this.head= new Nodo(dato);
+            this.head= new Nodo<>(dato);
             this.head.setNext(temp);
         }
         len++;
@@ -118,7 +119,7 @@ public class Lista<T> {
         while(aux.getNext()!=null){
             aux=aux.getNext();
         }
-        aux.setNext(new Nodo(dato));
+        aux.setNext(new Nodo<>(dato));
     }
 
     /**
@@ -142,7 +143,7 @@ public class Lista<T> {
             pos++;
         }
         Nodo<T> temp=aux.getNext();
-        aux.setNext(new Nodo(dato));
+        aux.setNext(new Nodo<>(dato));
         aux.getNext().setNext(temp);
         len++;
     
@@ -150,7 +151,7 @@ public class Lista<T> {
         /**
      * Metodo para agregar un dato a una posicion dada de la lista
      * @param i 
-     * @param dato 
+     * @param nodo 
      */
     public void add(int i,Nodo<T> nodo){
         
@@ -231,23 +232,14 @@ public class Lista<T> {
 
     
     public void  swap(int i, int j){
-        Nodo nodo= new Nodo(this.getNodo(i));
-        Nodo nodo2=new Nodo(this.getNodo(j));
-        this.remove(i);
-        this.remove(j);
-        this.add(i, nodo2);
-        this.add(j,nodo);
-        
-        
+        Nodo<T> aux= new Nodo<>(this.getInfo(i)); 
+        this.getNodo(i).setDato(this.getInfo(j));      
+        this.getNodo(j).setDato(aux.getDato());     
     }
     
-    public void replace(int i,Nodo<T> nodo){
-        this.remove(i);
-        this.add(i, nodo);
-    }
 
-    public void replace(int i, T current) {
-        this.remove(i);
-        this.add(i, current);//To change body of generated methods, choose Tools | Templates.
+
+    public void replace(int i, T dato) {
+        this.getNodo(i).setDato(dato);       //To change body of generated methods, choose Tools | Templates.
     }
 }
