@@ -27,6 +27,7 @@ public class AndroidStudio {
         lista.addFirst(4);
         lista.addFirst(5);
         lista.addFirst(6);
+        lista.addLast(9);
         lista.print();
         System.out.println();
         //Sorted.bubbleSort(lista);

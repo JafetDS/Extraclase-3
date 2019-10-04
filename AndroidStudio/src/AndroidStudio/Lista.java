@@ -190,6 +190,8 @@ public class Lista<T> {
         }
         return false;
     }
+    
+
     /**
      * Metodo para eliminar el primer elemento 
      */
