@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">App_Sort</string>
+    <string name="ingrese_la_lista_separada_por_comas">Ingrese la lista separada por comas.</string>
 </resources>
